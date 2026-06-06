@@ -1,5 +1,43 @@
-<div style="padding: 2rem;">
+<div style="padding: 2rem; font-family: Arial;">
     <h2>🏠 Home Page</h2>
-    <p>Welcome! You are logged in.</p>
-    <a routerLink="/admin">Go to Admin</a>
+
+    <!-- Public API -->
+    <div style="margin-bottom: 1.5rem; padding: 1rem; 
+              border: 1px solid #ddd; border-radius: 8px;">
+        <h3>🌐 Public API</h3>
+        <button (click)="loadPublic()" style="background:#0a1628;color:white;padding:8px 16px;
+             border:none;border-radius:4px;cursor:pointer;">
+            Call Public
+        </button>
+        <p *ngIf="publicResponse" style="margin-top:0.5rem;color:green;">
+            ✅ {{ publicResponse }}
+        </p>
+    </div>
+
+    <!-- Protected API -->
+    <div style="margin-bottom: 1.5rem; padding: 1rem; 
+              border: 1px solid #ddd; border-radius: 8px;">
+        <h3>🔒 Protected API</h3>
+        <button (click)="loadProtected()" style="background:#c9a84c;color:white;padding:8px 16px;
+             border:none;border-radius:4px;cursor:pointer;">
+            Call Protected
+        </button>
+        <p *ngIf="protectedResponse" style="margin-top:0.5rem;color:green;">
+            ✅ {{ protectedResponse }}
+        </p>
+    </div>
+
+    <!-- Admin API -->
+    <div *ngIf="isAdmin" style="margin-bottom: 1.5rem; padding: 1rem; 
+              border: 1px solid #ddd; border-radius: 8px;">
+        <h3>🔑 Admin API</h3>
+        <button (click)="loadAdmin()" style="background:red;color:white;padding:8px 16px;
+             border:none;border-radius:4px;cursor:pointer;">
+            Call Admin
+        </button>
+        <p *ngIf="adminResponse" style="margin-top:0.5rem;color:green;">
+            ✅ {{ adminResponse }}
+        </p>
+    </div>
+
 </div>

@@ -20,7 +20,7 @@ export const appConfig: ApplicationConfig = {
       provide: INCLUDE_BEARER_TOKEN_INTERCEPTOR_CONFIG,
       useValue: [
         {
-          urlPattern: new RegExp('^http://localhost:8080/.*', 'i'),
+          urlPattern: new RegExp('^http://localhost:8081/.*', 'i'),
           httpMethods: ['GET', 'POST', 'PUT', 'DELETE']
         }
       ]
